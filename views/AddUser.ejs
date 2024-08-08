@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+   
+
+    <title><%=title%></title>
+    <!--  -->
+    <style>
+      /* CSS for spinner */
+      .spinner {
+          display: none; /* Initially hidden */
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -20px; /* Half of width */
+          margin-top: -20px; /* Half of height */
+          border: 4px solid rgba(0, 0, 0, 0.1);
+          border-left-color: #7983ff; /* Change color as needed */
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+          to { transform: rotate(360deg); }
+      }
+  </style>
+    <!--  -->
+  </head>
+  <body>
+   
+
+        <!--------------------------------------------->
+         <div class="container" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZWu1LYXoc_V73p_w2nwnBTwE9k0lQggnrmg&s);">
+          <h3 style="text-align: center; background-color: antiquewhite;">Add Users</h3>
+        <form id="uploadForm" action="/upload/file" method="post" enctype="multipart/form-data" onsubmit="handleSubmit()">
+          <label for="exampleInputEmail1">Upload Csv File</label>
+              <input type="file" class="form-control" name="file">
+              <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+      </form>
+      <div id="spinner" class="spinner"></div>
+    </div>
+      <script>
+        // JavaScript to show spinner on form submit
+        const form = document.getElementById('uploadForm');
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', function() {
+            spinner.style.display = 'block'; // Show spinner on form submit
+        });
+    //     function disableButton() {
+    //     document.getElementById('submitBtn').disabled = true; // Disable the button
+    // }
+    function handleSubmit() {
+        // Disable the submit button to prevent multiple submissions
+        //document.getElementById('submitButton').disabled = true;
+        // Optionally, you can hide the button as well
+         document.getElementById('submitButton').style.display = 'none';
+    }
+    </script>
+        
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--     
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
